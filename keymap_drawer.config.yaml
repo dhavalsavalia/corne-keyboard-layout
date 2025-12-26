@@ -1,0 +1,9 @@
+parse_config:
+  preprocess: true
+  zmk_additional_includes:
+    - "behaviors.dtsi"
+
+draw_config:
+  key_h: 56
+  key_w: 60
+  split_gap: 30
