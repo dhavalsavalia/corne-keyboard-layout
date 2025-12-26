@@ -1,18 +1,38 @@
-name: Draw ZMK keymaps
+name: Update drawing
+
 on:
   push:
+    branches:
+      - main
     paths:
-      - "config/*.keymap"
-      - "keymap_drawer.config.yaml"
+      - 'config/*'
+
   workflow_dispatch:
 
 jobs:
-  draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+  update_drawing:
+    name: Update drawing
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    with:
-      keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer.config.yaml"
-      output_folder: "keymap-drawer"
-      amend_commit: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: 3.13
+      - name: Install pipx
+        uses: CfirTsabari/actions-pipx@v1
+      - name: Install keymap-drawer
+        run: pipx install keymap-drawer
+      - name: Generate corne_keymap.yaml
+        run: keymap parse -c 10 -z ./config/corne.keymap > corne_keymap.yaml
+      - name: Generate SVG
+        run: keymap draw corne_keymap.yaml > keymap.svg
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add keymap.svg
+          git commit -m "update keymap drawing" || true
+          git push origin main
