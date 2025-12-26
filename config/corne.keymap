@@ -57,7 +57,7 @@
             display-name = "Base";
             bindings = <
    &kp GRAVE    &kp Q       &kp W       &kp E       &kp R       &kp T         &kp Y   &kp U       &kp I       &kp O      &kp P         &kp MINUS
-   &caps_word   &hm LGUI A  &hm LALT S  &hm LCTRL D &hm LSHFT F &kp G         &kp H   &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI &kp SQT
+   &none        &hm LGUI A  &hm LALT S  &hm LCTRL D &hm LSHFT F &kp G         &kp H   &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI &kp SQT
    &kp LC(S)    &kp Z       &kp X       &kp C       &kp V       &kp B         &kp N   &kp M       &kp COMMA   &kp DOT    &kp FSLH      &none
                             &lt MEDIA ESC &lt SYM SPACE &kp TAB               &kp RET &lt NUM BSPC &lt FUN DEL
             >;
