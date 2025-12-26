@@ -1,0 +1,21 @@
+# Build output
+firmware/
+*.uf2
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# macOS
+.DS_Store
+
+# Editor
+*.swp
+*.swo
+*~
+
+# ZMK build artifacts (if building in-tree)
+build/
+
+# bv (beads viewer) local config and caches
+.bv/

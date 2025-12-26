@@ -1,0 +1,82 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define BASE  0
+#define NUM   1
+#define SYM   2
+#define FUN   3
+#define MEDIA 4
+
+/ {
+    behaviors {
+        hm: homerow_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            display-name = "Base";
+            bindings = <
+   &kp GRAVE    &kp Q       &kp W       &kp E       &kp R       &kp T         &kp Y   &kp U       &kp I       &kp O      &kp P         &kp MINUS
+   &caps_word   &hm LGUI A  &hm LALT S  &hm LCTRL D &hm LSHFT F &kp G         &kp H   &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI &kp SQT
+   &kp LC(S)    &kp Z       &kp X       &kp C       &kp V       &kp B         &kp N   &kp M       &kp COMMA   &kp DOT    &kp FSLH      &none
+                            &lt MEDIA ESC &lt SYM SPACE &kp TAB               &kp RET &lt NUM BSPC &lt FUN DEL
+            >;
+        };
+
+        num_layer {
+            display-name = "Num";
+            bindings = <
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans   &trans &trans &trans
+            >;
+        };
+
+        sym_layer {
+            display-name = "Sym";
+            bindings = <
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans   &trans &trans &trans
+            >;
+        };
+
+        fun_layer {
+            display-name = "Fun";
+            bindings = <
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                        &trans &trans &trans   &trans &trans &trans
+            >;
+        };
+
+        media_layer {
+            display-name = "Media";
+            bindings = <
+   &none  &none     &none     &none      &none      &none           &none       &none        &none        &none       &kp C_BRI_UP    &none
+   &none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &kp C_BRI_DN    &none
+   &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none  &none  &none  &bt BT_CLR  &bt BT_CLR_ALL  &none
+                        &trans &trans &trans   &kp C_STOP &kp C_PP &kp C_MUTE
+            >;
+        };
+    };
+};
