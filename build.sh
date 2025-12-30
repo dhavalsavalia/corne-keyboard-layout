@@ -27,11 +27,19 @@ build_half() {
     echo "Done: $OUTPUT_DIR/corne_$side.uf2"
 }
 
+build_reset() {
+    echo "Building settings_reset firmware..."
+    west build -p -s app -b nice_nano -- -DSHIELD=settings_reset
+    cp build/zephyr/zmk.uf2 "$OUTPUT_DIR/settings_reset.uf2"
+    echo "Done: $OUTPUT_DIR/settings_reset.uf2"
+}
+
 case "${1:-both}" in
     left)  build_half left "" ;;
     right) build_half right ;;
     both)  build_half left "" && build_half right ;;
-    *)     echo "Usage: $0 [left|right|both]" && exit 1 ;;
+    reset) build_reset ;;
+    *)     echo "Usage: $0 [left|right|both|reset]" && exit 1 ;;
 esac
 
 echo ""
