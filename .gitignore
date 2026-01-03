@@ -1,6 +1,9 @@
 # Build output
-firmware/
+/firmware/
 *.uf2
+
+# Go binary
+/flash
 
 # Claude Code
 .claude/
