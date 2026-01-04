@@ -1,0 +1,19 @@
+# kbflash configuration for Corne keyboard
+# Copy to ~/.config/kbflash/config.toml and edit paths as needed
+
+[keyboard]
+name = "corne"
+type = "split"
+sides = ["left", "right"]
+
+[build]
+enabled = true
+command = "./build.sh"
+args = ["both"]
+working_dir = "/Users/dhavalsavalia/projects/keyboard/corne-build"
+firmware_dir = "/Users/dhavalsavalia/projects/keyboard/corne-build/firmware"
+file_pattern = "*.uf2"
+
+[device]
+name = "NICENANO"
+poll_interval = "500ms"
