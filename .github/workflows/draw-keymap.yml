@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'config/*'
+      - 'keymap/*'
 
   workflow_dispatch:
 
@@ -24,10 +25,8 @@ jobs:
         uses: CfirTsabari/actions-pipx@v1
       - name: Install keymap-drawer
         run: pipx install keymap-drawer
-      - name: Generate corne_keymap.yaml
-        run: keymap parse -c 10 -z ./config/corne.keymap > corne_keymap.yaml
       - name: Generate SVG
-        run: keymap draw corne_keymap.yaml > keymap.svg
+        run: keymap -c keymap/config.yaml draw keymap/corne.yaml > keymap.svg
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
