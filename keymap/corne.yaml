@@ -10,9 +10,9 @@ layers:
     - [⌘, {t: ⎵, h: Nav, s: _}, {t: ↹, h: Utils}, {t: ⏎, h: Num}, {t: ⌫, h: Sym}, {t: ⇧, h: sticky}]
 
   Nav:
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, LClk, MOUSE ←, MOUSE ↓, MOUSE ↑, MOUSE →, RClk]
+    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, "$$mdi:mouse-left-click$$", MOUSE ←, MOUSE ↓, MOUSE ↑, MOUSE →, "$$mdi:mouse-right-click$$"]
     - [⌃S, ⌘, ⎇, ⌃, ⇧, {t: ▽, type: trans}, {t: ▽, type: trans}, ←, ↓, ↑, →, {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, BACK, HOME, PG DN, PG UP, END, FORWARD]
+    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, "$$mdi:arrow-left-circle$$", "$$mdi:home$$", "$$mdi:chevron-double-down$$", "$$mdi:chevron-double-up$$", "$$mdi:arrow-collapse-right$$", "$$mdi:arrow-right-circle$$"]
     - [{t: ▽, type: trans}, {type: held}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
 
   Sym:
@@ -30,8 +30,8 @@ layers:
   Utils:
     - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
     - [⌃S, ⌘, ⎇, ⌃, ⇧, {t: ▽, type: trans}, ⏮, "$$mdi:volume-minus$$", "$$mdi:volume-plus$$", ⏭, {t: ▽, type: trans}, {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: BT, h: "0"}, {t: BT, h: "1"}, {t: BT, h: "2"}, {t: BT, h: "3"}, {t: BT, h: "4"}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, BT CLR, BT CLR ALL, {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {type: held}, "$$mdi:stop$$", ⏯, MUTE]
+    - [{t: ▽, type: trans}, {t: $$mdi:bluetooth$$, h: "0"}, {t: $$mdi:bluetooth$$, h: "1"}, {t: $$mdi:bluetooth$$, h: "2"}, {t: $$mdi:bluetooth$$, h: "3"}, {t: $$mdi:bluetooth$$, h: "4"}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: "$$mdi:bluetooth$$", h: "Clear"}, {t: "$$mdi:bluetooth$$", h: "Clear All"}, {t: ▽, type: trans}]
+    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {type: held}, "$$mdi:stop$$", ⏯, "$$mdi:volume-mute$$"]
 
 combos:
   - {p: [17, 18], k: ⇪ WORD, l: [Base]}
