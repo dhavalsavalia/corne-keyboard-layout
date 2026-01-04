@@ -179,7 +179,7 @@
             display-name = "Base";
             bindings = <
    &kp LGUI   &kp Q        &kp W        &kp E         &kp R         &kp T           &kp Y       &kp U         &kp I         &kp O        &kp P            &kp DEL
-   &kp LCTRL  &bhm LGUI A  &bhm LALT S  &bhm LCTRL D  &bhm LSHFT F  &kp G           &kp H       &bhm RSHFT J  &bhm RCTRL K  &bhm RALT L  &bhm RGUI SEMI   &kp SQT
+   &kp LC(S)  &bhm LGUI A  &bhm LALT S  &bhm LCTRL D  &bhm LSHFT F  &kp G           &kp H       &bhm RSHFT J  &bhm RCTRL K  &bhm RALT L  &bhm RGUI SEMI   &kp SQT
    &sk LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B           &kp N       &kp M         &kp COMMA     &kp DOT      &kp FSLH         &kp RALT
                            &kp LGUI     &underspace   &lt UTILS TAB                 &lt NUM RET &lt SYM BSPC  &sk RSHFT
             >;
@@ -188,8 +188,8 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-   &none  &none     &none     &none      &none      &none           &mkp LCLK       &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp RCLK
-   &none  &kp LGUI  &kp LALT  &kp LSHFT  &kp LCTRL  &none           &none           &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &none
+   &none      &none     &none     &none      &none      &none           &mkp LCLK       &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp RCLK
+   &kp LC(S)  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &none           &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &none
    &none  &none     &none     &none      &none      &none           &mkp MB4        &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &mkp MB5
                     &trans    &trans     &trans                     &trans          &trans          &trans
             >;
@@ -198,8 +198,8 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-   &none  &kp EXCL   &kp QMARK         &kp LBRC          &kp RBRC          &kp PLUS           &kp DLLR   &kp GRAVE         &kp PRCNT          &kp HASH   &kp CARET  &none
-   &none  &kp LT     &arrow_func_tap   &bhm LSHFT LPAR   &bhm LCTRL RPAR   &kp MINUS          &kp EQUAL  &bhm RCTRL SQT    &bhm RSHFT AMPS    &kp DQT    &kp COLON  &none
+   &none      &kp EXCL   &kp QMARK         &kp LBRC          &kp RBRC          &kp PLUS           &kp DLLR   &kp GRAVE         &kp PRCNT          &kp HASH   &kp CARET  &none
+   &kp LC(S)  &kp LT     &arrow_func_tap   &bhm LCTRL LPAR   &bhm LSHFT RPAR   &kp MINUS          &kp EQUAL  &bhm RSHFT SQT    &bhm RCTRL AMPS    &kp DQT    &kp COLON  &none
    &none  &kp BSLH   &kp FSLH          &kp LBKT          &kp RBKT          &kp ASTRK          &kp UNDER  &kp AT            &kp PIPE           &kp TILDE  &kp HASH   &none
                      &trans            &trans            &trans                               &trans     &trans            &trans
             >;
@@ -208,8 +208,8 @@
         num_layer {
             display-name = "Num";
             bindings = <
-   &kp ESC  &kp F1     &kp F2     &kp F3     &kp F4          &kp F5           &kp F6  &kp F7          &kp F8     &kp F9     &kp F10    &kp F11
-   &none    &kp N1     &kp N2     &kp N3     &bhm LCTRL N4   &kp N5           &kp N6  &bhm RCTRL N7   &kp N8     &kp N9     &kp N0     &none
+   &kp ESC    &kp F1        &kp F2        &kp F3        &kp F4           &kp F5           &kp F6  &kp F7           &kp F8        &kp F9        &kp F10       &kp F11
+   &kp LC(S)  &bhm LGUI N1  &bhm LALT N2  &bhm LCTRL N3 &bhm LSHFT N4    &kp N5           &kp N6  &bhm RSHFT N7    &bhm RCTRL N8 &bhm RALT N9  &bhm RGUI N0  &none
    &none    &kp EXCL   &kp AT     &kp HASH   &kp DLLR        &kp PRCNT        &kp CARET &kp AMPS      &kp ASTRK  &kp LPAR   &kp RPAR   &none
                        &trans     &trans     &trans                           &trans  &trans         &trans
             >;
@@ -218,8 +218,8 @@
         utils_layer {
             display-name = "Utils";
             bindings = <
-   &none  &none        &none        &none        &none        &none              &none       &none        &none        &none       &none           &none
-   &none  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHFT    &none              &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &none           &none
+   &none      &none        &none        &none        &none        &none              &none       &none        &none        &none       &none           &none
+   &kp LC(S)  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHFT    &none              &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &none           &none
    &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &none       &none        &none        &bt BT_CLR  &bt BT_CLR_ALL  &none
                        &trans       &trans       &trans                          &kp C_STOP  &kp C_PP     &kp C_MUTE
             >;

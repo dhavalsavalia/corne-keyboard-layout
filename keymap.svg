@@ -420,15 +420,11 @@ path.combo {
 </g>
 <g class="combo combopos-2">
 <rect rx="6" ry="6" x="742" y="64" width="28" height="26" class="combo"/>
-<text x="756" y="77" class="combo tap">
-<tspan x="756" dy="-0.6em">VOL</tspan><tspan x="756" dy="1.2em">UP</tspan>
-</text>
+<use href="#mdi:volume-plus" xlink:href="#mdi:volume-plus" x="748" y="69" height="16" width="16.0" class="combo tap glyph mdi:volume-plus"/>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="742" y="120" width="28" height="26" class="combo"/>
-<text x="756" y="133" class="combo tap">
-<tspan x="756" dy="-0.6em">VOL</tspan><tspan x="756" dy="1.2em">DOWN</tspan>
-</text>
+<use href="#mdi:volume-minus" xlink:href="#mdi:volume-minus" x="748" y="125" height="16" width="16.0" class="combo tap glyph mdi:volume-minus"/>
 </g>
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="70" y="64" width="28" height="26" class="combo"/>
