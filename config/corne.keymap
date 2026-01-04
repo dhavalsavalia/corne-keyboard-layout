@@ -59,6 +59,18 @@
             layers = <0>;
         };
 
+        bri_up {
+            bindings = <&bri_up>;
+            key-positions = <1 13>;
+            layers = <0>;
+        };
+
+        bri_down {
+            bindings = <&bri_dn>;
+            key-positions = <13 25>;
+            layers = <0>;
+        };
+
         caps_lock {
             bindings = <&kp CAPSLOCK>;
             key-positions = <5 6>;
@@ -117,6 +129,22 @@
             wait-ms = <30>;
             tap-ms = <30>;
             bindings = <&kp SPACE &kp MINUS &kp MINUS &kp SPACE>;
+        };
+
+        bri_up: bri_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp LA(LG(N2))>;
+        };
+
+        bri_dn: bri_dn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&kp LA(LG(N1))>;
         };
     };
 

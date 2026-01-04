@@ -97,6 +97,9 @@ combos:
   # Right pinky column: volume (vertical combo)
   - {p: [10, 22], k: VOL+, l: [Base]}
   - {p: [22, 34], k: VOL-, l: [Base]}
+  # Left pinky column: brightness (vertical combo)
+  - {p: [1, 13], k: BRI+, l: [Base]}
+  - {p: [13, 25], k: BRI-, l: [Base]}
   # Inner top: caps lock (rarely needed but accessible)
   - {p: [5, 6], k: CAPS, l: [Base]}
   # Top right: delete
