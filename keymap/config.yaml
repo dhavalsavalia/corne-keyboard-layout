@@ -116,6 +116,7 @@ draw_config:
   glyphs: {}
 
 parse_config:
+  zmk_additional_includes: ["zmk-helpers/include"]
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map:
