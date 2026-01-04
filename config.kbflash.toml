@@ -4,7 +4,7 @@
 [keyboard]
 name = "corne"
 type = "split"
-sides = ["left", "right"]
+sides = ["left", "right", "reset"]
 
 [build]
 enabled = true
