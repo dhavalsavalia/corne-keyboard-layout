@@ -1,58 +1,62 @@
-# Corne ZMK Keymap
+# corne-build
 
-Custom ZMK keymap for Corne keyboard with nice!nano v2 + nice!view displays.
+My ZMK config for a 42-key Corne split keyboard with nice!view displays.
+
+> Inspired by [thrly's corne layout](https://github.com/thrly/thrly-corne-zmk) — check out their excellent [blog post on split keyboard customization](https://thrly.com/blog/thoughts-on-customising-a-split-keyboard-layout/)
 
 ![Keymap](keymap.svg)
 
+## Features
+
+- QWERTY with balanced homerow mods (⌘-⎇-⌃-⇧)
+- Sticky shift on outer thumb keys
+- Space morphs to underscore when shifted
+- Nav layer with mouse keys and arrow navigation
+- Horizontal number row with mirrored homerow mods
+
+### Combos
+
+| Keys | Action |
+|------|--------|
+| Q + W | Escape |
+| G + H | Caps Word |
+| T + Y | Caps Lock |
+| E + R | Dash |
+| W + E + R | Em-dash (` -- `) |
+| U + I | Underscore |
+| U + J | Single quote |
+| I + K | At symbol |
+| O + P | Delete |
+| P + ; | Volume up |
+| ; + / | Volume down |
+| Q + A | Brightness up |
+| A + Z | Brightness down |
+
+### Macros
+
+| Trigger | Output |
+|---------|--------|
+| Double-tap `>` | `=>` (arrow function) |
+| W + E + R combo | ` -- ` (em-dash with spaces) |
+
 ## Layers
 
-| # | Name  | Access     |
-| --- | ------- | ------------ |
-| 0 | BASE  | Default    |
-| 1 | NAV   | Hold SPACE |
-| 2 | SYM   | Hold BSPC  |
-| 3 | NUM   | Hold RET   |
-| 4 | UTILS | Hold TAB   |
+| Layer | Access |
+|-------|--------|
+| Base | Default |
+| Nav | Hold Space |
+| Sym | Hold Backspace |
+| Num | Hold Return |
+| Utils | Hold Tab |
 
-## Setup
-
-### Install kbflash
+## Build & Flash
 
 ```bash
-brew install dhavalsavalia/kbflash/kbflash
+./build.sh          # build both halves
+kbflash             # flash via TUI
 ```
 
-### Configure
+## Credits
 
-```bash
-cp config.kbflash.toml ~/.config/kbflash/config.toml
-# Edit paths in config to match your system
-```
-
-## Building
-
-```bash
-./build.sh        # both halves
-./build.sh left   # left only
-./build.sh right  # right only
-./build.sh reset  # settings_reset firmware
-```
-
-Output goes to `./firmware/`
-
-## Flashing
-
-```bash
-kbflash
-```
-
-Follow TUI prompts - put each half into bootloader mode (double-tap reset) when prompted.
-
-## Resetting (Clean Flash)
-
-Use when keyboard has pairing issues or needs a fresh start:
-
-1. Remove old "Corne" from Bluetooth devices, pair as new
-2. Build reset firmware: `./build.sh reset`
-3. Run `kbflash` and flash `settings_reset.uf2` to both halves
-4. Wait a few seconds, then flash normal firmware
+- [thrly](https://github.com/thrly/thrly-corne-zmk) for keymap inspiration
+- [keymap-drawer](https://github.com/caksoylar/keymap-drawer) for visualization
