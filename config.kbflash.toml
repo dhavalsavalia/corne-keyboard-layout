@@ -8,8 +8,9 @@ sides = ["left", "right"]
 
 [build]
 enabled = true
+mode = "native"
 command = "./build.sh"
-args = ["both"]
+args = ["{{side}}"]
 working_dir = "/Users/dhavalsavalia/projects/keyboard/corne-build"
 firmware_dir = "/Users/dhavalsavalia/projects/keyboard/corne-build/firmware"
 file_pattern = "*.uf2"
