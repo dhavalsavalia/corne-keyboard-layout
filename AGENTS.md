@@ -1,12 +1,7 @@
 # Agent Instructions
 
-## Build Commands
-```bash
-./build.sh        # Build both halves
-./build.sh left   # Left half only
-./build.sh right  # Right half only
-```
-Output: `./firmware/YYYYMMDD/corne_{left,right}.uf2`
+## Build
+Push to trigger GitHub Actions. Download firmware artifacts from Actions tab.
 
 ## Code Style
 - **Bash**: Use `set -e` for error checking, quote variables, prefer `${var:-default}` syntax

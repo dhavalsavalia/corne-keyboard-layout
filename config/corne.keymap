@@ -57,20 +57,24 @@ ZMK_TAP_DANCE(arrow_func_tap,
     bindings = <&kp GT>, <&arrow_func>;
 )
 
-/* Combos - using key labels from 42.h */
-ZMK_COMBO(caps_word,    &caps_word,    LM5 RM0,       BASE)  // G H
-ZMK_COMBO(esc,          &kp ESCAPE,    LT4 LT3,       BASE)  // Q W
-ZMK_COMBO(vol_up,       &kp C_VOL_UP,  RT5 RM5,       BASE)  // P ;
-ZMK_COMBO(vol_down,     &kp C_VOL_DN,  RM5 RB5,       BASE)  // ; /
-ZMK_COMBO(bri_up,       &bri_up,       LT4 LM4,       BASE)  // Q A
-ZMK_COMBO(bri_down,     &bri_dn,       LM4 LB4,       BASE)  // A Z
-ZMK_COMBO(caps_lock,    &kp CAPSLOCK,  LT0 RT0,       BASE)  // T Y
-ZMK_COMBO(delete,       &kp DELETE,    RT4 RT5,       BASE)  // O P
-ZMK_COMBO(underscore,   &kp UNDER,     RT2 RT3,       BASE)  // U I
-ZMK_COMBO(dash,         &kp MINUS,     LT2 LT1,       BASE)  // E R
-ZMK_COMBO(em_dash,      &emdsh,        LT3 LT2 LT1,   BASE)  // W E R
-ZMK_COMBO(single_quote, &kp SQT,       RT2 RM2,       BASE)  // U J
-ZMK_COMBO(at_sign,      &kp AT,        RT3 RM3,       BASE)  // I K
+/* Combos - using key labels from 42.h
+ * Left:  LT5=0 LT4=1 LT3=2 LT2=3 LT1=4 LT0=5  |  Right: RT0=6 RT1=7 RT2=8 RT3=9 RT4=10 RT5=11
+ *        LM5=12 LM4=13 LM3=14 LM2=15 LM1=16 LM0=17 | RM0=18 RM1=19 RM2=20 RM3=21 RM4=22 RM5=23
+ *        LB5=24 LB4=25 LB3=26 LB2=27 LB1=28 LB0=29 | RB0=30 RB1=31 RB2=32 RB3=33 RB4=34 RB5=35
+ */
+ZMK_COMBO(caps_word,    &caps_word,    LM0 RM0,       BASE)  // 17,18: G H
+ZMK_COMBO(esc,          &kp ESCAPE,    LT4 LT3,       BASE)  // 1,2: Q W
+ZMK_COMBO(vol_up,       &kp C_VOL_UP,  RT4 RM4,       BASE)  // 10,22: P ;
+ZMK_COMBO(vol_down,     &kp C_VOL_DN,  RM4 RB4,       BASE)  // 22,34: ; /
+ZMK_COMBO(bri_up,       &bri_up,       LT4 LM4,       BASE)  // 1,13: Q A
+ZMK_COMBO(bri_down,     &bri_dn,       LM4 LB4,       BASE)  // 13,25: A Z
+ZMK_COMBO(caps_lock,    &kp CAPSLOCK,  LT0 RT0,       BASE)  // 5,6: T Y
+ZMK_COMBO(delete,       &kp DELETE,    RT3 RT4,       BASE)  // 9,10: O P
+ZMK_COMBO(underscore,   &kp UNDER,     RT1 RT2,       BASE)  // 7,8: U I
+ZMK_COMBO(dash,         &kp MINUS,     LT2 LT1,       BASE)  // 3,4: E R
+ZMK_COMBO(em_dash,      &emdsh,        LT3 LT2 LT1,   BASE)  // 2,3,4: W E R
+ZMK_COMBO(single_quote, &kp SQT,       RT1 RM1,       BASE)  // 7,19: U J
+ZMK_COMBO(at_sign,      &kp AT,        RT2 RM2,       BASE)  // 8,20: I K
 
 / {
     keymap {
