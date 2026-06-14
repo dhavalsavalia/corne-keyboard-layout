@@ -19,6 +19,3 @@ CLAUDE.md
 
 # ZMK build artifacts (if building in-tree)
 build/
-
-# bv (beads viewer) local config and caches
-.bv/
