@@ -4,46 +4,19 @@ layout:
 
 layers:
   Base:
-    - [⌘, Q, W, E, R, T, Y, U, I, O, P, ⌦]
-    - [⌃S, {t: A, h: ⌘}, {t: S, h: ⎇}, {t: D, h: ⌃}, {t: F, h: ⇧}, G, H, {t: J, h: ⇧}, {t: K, h: ⌃}, {t: L, h: ⎇}, {t: ";", h: ⌘, s: ":"}, "'"]
-    - [{t: ⇧, h: sticky}, Z, X, C, V, B, N, M, {t: ",", s: <}, {t: ".", s: ">"}, /, ⎇]
-    - [⌘, {t: ⎵, h: Nav, s: _}, {t: ↹, h: Utils}, {t: ⏎, h: Num}, {t: ⌫, h: Sym}, {t: ⇧, h: sticky}]
+    - [↹, Q, W, E, R, T, Y, U, I, O, P, ESC]
+    - [⌃, A, S, D, F, G, H, J, K, L, ";", "'"]
+    - [⇧, Z, X, C, V, B, N, M, {t: ",", s: <}, {t: ".", s: ">"}, /, ⇧]
+    - [⌘, {t: Lower, type: held}, {t: ⏎, h: ⎇}, {t: ⎵, h: Hyper}, ⌫, {t: Raise, type: held}]
 
-  Nav:
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, "$$mdi:mouse-left-click$$", MOUSE ←, MOUSE ↓, MOUSE ↑, MOUSE →, "$$mdi:mouse-right-click$$"]
-    - [⌃S, ⌘, ⎇, ⌃, ⇧, {t: ▽, type: trans}, {t: ▽, type: trans}, ←, ↓, ↑, →, {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, "$$mdi:arrow-left-circle$$", "$$mdi:home$$", "$$mdi:chevron-double-down$$", "$$mdi:chevron-double-up$$", "$$mdi:arrow-collapse-right$$", "$$mdi:arrow-right-circle$$"]
+  Lower:
+    - [{t: ▽, type: trans}, "!", "@", "#", $, "%", ^, "&", "*", "(", ")", \]
+    - [{t: ▽, type: trans}, "1", "2", "3", "4", "5", "-", "=", "`", "[", "]", "|"]
+    - [{t: ▽, type: trans}, "6", "7", "8", "9", "0", _, +, "~", "{", "}", {t: ▽, type: trans}]
     - [{t: ▽, type: trans}, {type: held}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
 
-  Sym:
-    - [{t: ▽, type: trans}, "!", "?", "{", "}", +, $, "`", "%", "#", ^, {t: ▽, type: trans}]
-    - [⌃S, <, {t: ">", s: "=>"}, {t: "(", h: ⌃}, {t: ")", h: ⇧}, "-", "=", {t: "'", h: ⇧}, {t: "&", h: ⌃}, '"', ":", {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, \, /, "[", "]", "*", _, "@", "|", "~", "#", {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {type: held}, {t: ▽, type: trans}]
-
-  Num:
-    - [ESC, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
-    - [⌃S, {t: "1", h: ⌘}, {t: "2", h: ⎇}, {t: "3", h: ⌃}, {t: "4", h: ⇧}, "5", "6", {t: "7", h: ⇧}, {t: "8", h: ⌃}, {t: "9", h: ⎇}, {t: "0", h: ⌘}, {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, "!", "@", "#", $, "%", ^, "&", "*", "(", ")", {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {type: held}, {t: ▽, type: trans}, {t: ▽, type: trans}]
-
-  Utils:
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
-    - [⌃S, ⌘, ⎇, ⌃, ⇧, {t: ▽, type: trans}, ⏮, "$$mdi:volume-minus$$", "$$mdi:volume-plus$$", ⏭, {t: ▽, type: trans}, {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: $$mdi:bluetooth$$, h: "0"}, {t: $$mdi:bluetooth$$, h: "1"}, {t: $$mdi:bluetooth$$, h: "2"}, {t: $$mdi:bluetooth$$, h: "3"}, {t: $$mdi:bluetooth$$, h: "4"}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: "$$mdi:bluetooth$$", h: "Clear"}, {t: "$$mdi:bluetooth$$", h: "Clear All"}, {t: ▽, type: trans}]
-    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {type: held}, "$$mdi:stop$$", ⏯, "$$mdi:volume-mute$$"]
-
-combos:
-  - {p: [17, 18], k: ⇪ WORD, l: [Base]}
-  - {p: [1, 2], k: ESC, l: [Base]}
-  - {p: [10, 22], k: "$$mdi:volume-plus$$", l: [Base]}
-  - {p: [22, 34], k: "$$mdi:volume-minus$$", l: [Base]}
-  - {p: [1, 13], k: ☀↑, l: [Base]}
-  - {p: [13, 25], k: ☀↓, l: [Base]}
-  - {p: [5, 6], k: ⇪ LOCK, l: [Base]}
-  - {p: [9, 10], k: ⌦, l: [Base]}
-  - {p: [7, 8], k: _, l: [Base]}
-  - {p: [3, 4], k: "-", l: [Base]}
-  - {p: [2, 3, 4], k: "---", l: [Base]}
-  - {p: [7, 19], k: "'", l: [Base]}
-  - {p: [8, 20], k: "@", l: [Base]}
+  Raise:
+    - [BOOT, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, {t: ▽, type: ghost}]
+    - [{t: ▽, type: trans}, ⏮, ⏭, "$$mdi:volume-minus$$", "$$mdi:volume-plus$$", ⏯, ←, ↓, ↑, →, {t: ▽, type: ghost}, {t: ▽, type: ghost}]
+    - [{t: ▽, type: trans}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: ghost}, {t: ▽, type: trans}]
+    - [{t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {type: held}]

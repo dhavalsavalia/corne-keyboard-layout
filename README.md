@@ -4,55 +4,32 @@
 
 My ZMK config for a 42-key Corne split keyboard with nice!view displays.
 
-> Inspired by [thrly's corne layout](https://github.com/thrly/thrly-corne-zmk) — check out their excellent [blog post on split keyboard customization](https://thrly.com/blog/thoughts-on-customising-a-split-keyboard-layout/)
+A faithful ZMK port of [josean's QMK Corne layout](https://github.com/josean-dev/dev-environment-files/blob/main/qmk/crkbd_rev1_3x6_josean.json) — same layers, keycodes, and beginner-friendly philosophy. A simple, clean baseline; personal customizations (combos, homerow mods) come in a later pass.
 
 ![Keymap](keymap.svg)
 
 ## Features
 
-- QWERTY with balanced homerow mods (⌘⎇⌃⇧ or GACS)
-- Sticky shift on right outer thumb key and left outer pinky
-- Space morphs to underscore when shifted
-- Nav layer with mouse keys and arrow navigation
-- Horizontal number row with aligned F-keys and symbols
-
-### Combos
-
-
-| Keys      | Action          |
-| ----------- | ----------------- |
-| Q + W     | Escape          |
-| G + H     | Caps Word       |
-| T + Y     | Caps Lock       |
-| E + R     | Dash            |
-| W + E + R | Em-dash (`--`)  |
-| U + I     | Underscore      |
-| U + J     | Single quote    |
-| I + K     | At symbol       |
-| O + P     | Delete          |
-| P + ;     | Volume up       |
-| ; + /     | Volume down     |
-| Q + A     | Brightness up   |
-| A + Z     | Brightness down |
-
-### Macros
-
-
-| Trigger         | Output                     |
-| ----------------- | ---------------------------- |
-| Double-tap`>`   | `=>` (arrow function)      |
-| W + E + R combo | `--` (em-dash with spaces) |
+- Plain QWERTY base layer (no homerow mods)
+- Three layers: Base, Lower (symbols + numbers), Raise (F-keys, media, arrows)
+- Left-inner thumb mod-tap: tap Enter / hold Alt
+- Right-inner thumb mod-tap: tap Space / hold Hyper (Ctrl+Shift+Alt+Cmd)
+- Momentary layer switches on the remaining inner/outer thumbs
 
 ## Layers
 
+| Layer | Access                  | Purpose                       |
+| ----- | ----------------------- | ----------------------------- |
+| Base  | Default                 | QWERTY                        |
+| Lower | Hold left-inner thumb   | Symbols + numbers             |
+| Raise | Hold right-outer thumb  | F-keys, media, arrow nav      |
 
-| Layer | Access         |
-| ------- | ---------------- |
-| Base  | Default        |
-| Nav   | Hold Space     |
-| Sym   | Hold Backspace |
-| Num   | Hold Return    |
-| Utils | Hold Tab       |
+### Thumb cluster
+
+```
+Left:   Cmd      Lower(hold)    Alt/Enter
+Right:  Hyper/Space   Backspace    Raise(hold)
+```
 
 ## Build & Flash
 
@@ -67,6 +44,6 @@ Once successfully flashed, nice!nano should eject itself. Do this for both halve
 
 ## Credits
 
-- [thrly](https://github.com/thrly/thrly-corne-zmk) for keymap inspiration
+- [josean](https://github.com/josean-dev/dev-environment-files) for the original QMK layout this ports
 - [keymap-drawer](https://github.com/caksoylar/keymap-drawer) for visualization
 - [zmk-helpers](https://github.com/urob/zmk-helpers) for cleaner keymap syntax

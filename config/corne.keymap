@@ -4,77 +4,15 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20   // default: 10
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/pointing.h>
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/42.h"
 
 #define BASE  0
-#define NAV   1
-#define SYM   2
-#define NUM   3
-#define UTILS 4
-
-&sk {
-    release-after-ms = <1000>;
-    quick-release;
-    lazy;
-    ignore-modifiers;
-};
-
-&lt {
-    tapping-term-ms = <200>;
-    flavor = "balanced";
-    quick-tap-ms = <150>;
-};
-
-/* Macros */
-ZMK_MACRO(arrow_func, bindings = <&kp EQUAL &kp GT>;)
-ZMK_MACRO(emdsh, bindings = <&kp SPACE &kp MINUS &kp MINUS &kp SPACE>;)
-ZMK_MACRO(bri_up, bindings = <&kp LA(LG(N2))>;)
-ZMK_MACRO(bri_dn, bindings = <&kp LA(LG(N1))>;)
-
-/* Behaviors */
-ZMK_HOLD_TAP(bhm,
-    bindings = <&kp>, <&kp>;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
-    flavor = "balanced";
-)
-
-ZMK_MOD_MORPH(underspace,
-    bindings = <&lt NAV SPACE>, <&kp UNDER>;
-    mods = <(MOD_RSFT)>;
-)
-
-ZMK_TAP_DANCE(arrow_func_tap,
-    bindings = <&kp GT>, <&arrow_func>;
-)
-
-/* Combos - using key labels from 42.h
- * Left:  LT5=0 LT4=1 LT3=2 LT2=3 LT1=4 LT0=5  |  Right: RT0=6 RT1=7 RT2=8 RT3=9 RT4=10 RT5=11
- *        LM5=12 LM4=13 LM3=14 LM2=15 LM1=16 LM0=17 | RM0=18 RM1=19 RM2=20 RM3=21 RM4=22 RM5=23
- *        LB5=24 LB4=25 LB3=26 LB2=27 LB1=28 LB0=29 | RB0=30 RB1=31 RB2=32 RB3=33 RB4=34 RB5=35
- */
-ZMK_COMBO(caps_word,    &caps_word,    LM0 RM0,       BASE)  // 17,18: G H
-ZMK_COMBO(esc,          &kp ESCAPE,    LT4 LT3,       BASE)  // 1,2: Q W
-ZMK_COMBO(vol_up,       &kp C_VOL_UP,  RT4 RM4,       BASE)  // 10,22: P ;
-ZMK_COMBO(vol_down,     &kp C_VOL_DN,  RM4 RB4,       BASE)  // 22,34: ; /
-ZMK_COMBO(bri_up,       &bri_up,       LT4 LM4,       BASE)  // 1,13: Q A
-ZMK_COMBO(bri_down,     &bri_dn,       LM4 LB4,       BASE)  // 13,25: A Z
-ZMK_COMBO(caps_lock,    &kp CAPSLOCK,  LT0 RT0,       BASE)  // 5,6: T Y
-ZMK_COMBO(delete,       &kp DELETE,    RT3 RT4,       BASE)  // 9,10: O P
-ZMK_COMBO(underscore,   &kp UNDER,     RT1 RT2,       BASE)  // 7,8: U I
-ZMK_COMBO(dash,         &kp MINUS,     LT2 LT1,       BASE)  // 3,4: E R
-ZMK_COMBO(em_dash,      &emdsh,        LT3 LT2 LT1,   BASE)  // 2,3,4: W E R
-ZMK_COMBO(single_quote, &kp SQT,       RT1 RM1,       BASE)  // 7,19: U J
-ZMK_COMBO(at_sign,      &kp AT,        RT2 RM2,       BASE)  // 8,20: I K
+#define LOWER 1
+#define RAISE 2
 
 / {
     keymap {
@@ -83,50 +21,30 @@ ZMK_COMBO(at_sign,      &kp AT,        RT2 RM2,       BASE)  // 8,20: I K
         base_layer {
             display-name = "Base";
             bindings = <
-   &kp LGUI   &kp Q        &kp W        &kp E         &kp R         &kp T           &kp Y       &kp U         &kp I         &kp O        &kp P            &kp DEL
-   &kp LC(S)  &bhm LGUI A  &bhm LALT S  &bhm LCTRL D  &bhm LSHFT F  &kp G           &kp H       &bhm RSHFT J  &bhm RCTRL K  &bhm RALT L  &bhm RGUI SEMI   &kp SQT
-   &sk LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B           &kp N       &kp M         &kp COMMA     &kp DOT      &kp FSLH         &kp RALT
-                           &kp LGUI     &underspace   &lt UTILS TAB                 &lt NUM RET &lt SYM BSPC  &sk RSHFT
+   &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I      &kp O    &kp P     &kp ESC
+   &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G      &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+   &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                     &kp LGUI  &mo LOWER  &mt LALT RET      &mt LC(LS(LA(LGUI))) SPACE  &kp BSPC  &mo RAISE
             >;
         };
 
-        nav_layer {
-            display-name = "Nav";
+        lower_layer {
+            display-name = "Lower";
             bindings = <
-   &none      &none     &none     &none      &none      &none           &mkp LCLK       &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp RCLK
-   &kp LC(S)  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &none           &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &none
-   &none  &none     &none     &none      &none      &none           &mkp MB4        &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &mkp MB5
-                    &trans    &trans     &trans                     &trans          &trans          &trans
+   &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSLH
+   &trans  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5         &kp MINUS  &kp EQUAL  &kp GRAVE  &kp LBKT  &kp RBKT  &kp PIPE
+   &trans  &kp N6    &kp N7  &kp N8    &kp N9    &kp N0         &kp UNDER  &kp PLUS   &kp TILDE  &kp LBRC  &kp RBRC  &trans
+                               &trans  &trans  &trans      &trans  &trans  &trans
             >;
         };
 
-        sym_layer {
-            display-name = "Sym";
+        raise_layer {
+            display-name = "Raise";
             bindings = <
-   &none      &kp EXCL   &kp QMARK         &kp LBRC          &kp RBRC          &kp PLUS           &kp DLLR   &kp GRAVE         &kp PRCNT          &kp HASH   &kp CARET  &none
-   &kp LC(S)  &kp LT     &arrow_func_tap   &bhm LCTRL LPAR   &bhm LSHFT RPAR   &kp MINUS          &kp EQUAL  &bhm RSHFT SQT    &bhm RCTRL AMPS    &kp DQT    &kp COLON  &none
-   &none  &kp BSLH   &kp FSLH          &kp LBKT          &kp RBKT          &kp ASTRK          &kp UNDER  &kp AT            &kp PIPE           &kp TILDE  &kp HASH   &none
-                     &trans            &trans            &trans                               &trans     &trans            &trans
-            >;
-        };
-
-        num_layer {
-            display-name = "Num";
-            bindings = <
-   &kp ESC    &kp F1        &kp F2        &kp F3        &kp F4           &kp F5           &kp F6  &kp F7           &kp F8        &kp F9        &kp F10       &kp F11
-   &kp LC(S)  &bhm LGUI N1  &bhm LALT N2  &bhm LCTRL N3 &bhm LSHFT N4    &kp N5           &kp N6  &bhm RSHFT N7    &bhm RCTRL N8 &bhm RALT N9  &bhm RGUI N0  &none
-   &none    &kp EXCL   &kp AT     &kp HASH   &kp DLLR        &kp PRCNT        &kp CARET &kp AMPS      &kp ASTRK  &kp LPAR   &kp RPAR   &none
-                       &trans     &trans     &trans                           &trans  &trans         &trans
-            >;
-        };
-
-        utils_layer {
-            display-name = "Utils";
-            bindings = <
-   &none      &none        &none        &none        &none        &none              &none       &none        &none        &none       &none           &none
-   &kp LC(S)  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHFT    &none              &kp C_PREV  &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &none           &none
-   &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &none       &none        &none        &bt BT_CLR  &bt BT_CLR_ALL  &none
-                       &trans       &trans       &trans                          &kp C_STOP  &kp C_PP     &kp C_MUTE
+   &bootloader  &kp F1      &kp F2      &kp F3        &kp F4        &kp F5      &kp F6    &kp F7    &kp F8  &kp F9     &kp F10  &none
+   &trans       &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none    &none
+   &trans       &none       &none       &none         &none         &none       &none     &none     &none   &none      &none    &trans
+                                        &trans  &trans  &trans      &trans  &trans  &trans
             >;
         };
     };

@@ -24,7 +24,7 @@ jobs:
       - name: Install pipx
         uses: CfirTsabari/actions-pipx@v1
       - name: Install keymap-drawer
-        run: pipx install keymap-drawer
+        run: pipx install keymap-drawer==0.23.0
       - name: Generate SVG
         run: keymap -c keymap/config.yaml draw keymap/corne.yaml > keymap.svg
       - name: Commit and push changes
