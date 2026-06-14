@@ -4,23 +4,26 @@
 
 My ZMK config for a 42-key Corne split keyboard with nice!view displays.
 
-A faithful ZMK port of [josean's QMK Corne layout](https://github.com/josean-dev/dev-environment-files/blob/main/qmk/crkbd_rev1_3x6_josean.json) — same layers, keycodes, and beginner-friendly philosophy. A simple, clean baseline; personal customizations (combos, homerow mods) come in a later pass.
+A ZMK port of [josean's QMK Corne layout](https://github.com/josean-dev/dev-environment-files/blob/main/qmk/crkbd_rev1_3x6_josean.json) — same three layers and keycodes — with GACS homerow mods layered on top.
 
 ![Keymap](keymap.svg)
 
 ## Features
 
-- Plain QWERTY base layer (no homerow mods)
+- QWERTY base layer with **GACS homerow mods**: pinky→index = GUI/ALT/CTRL/SHIFT, mirrored on both hands
+- **Hyper** (Ctrl+Shift+Alt+Cmd) on the inner-index keys `G` and `H`
+- Robust positional hold-taps (opposite-hand only, hold-trigger-on-release) so fast typing doesn't misfire mods
+- Right-hand mods replicated on the Lower layer, so `mod+num` (e.g. aerospace `alt+1`) works while numbers are held
 - Three layers: Base, Lower (symbols + numbers), Raise (F-keys, media, arrows)
 - Left-inner thumb mod-tap: tap Enter / hold Alt
-- Right-inner thumb mod-tap: tap Space / hold Hyper (Ctrl+Shift+Alt+Cmd)
+- Right-inner thumb mod-tap: tap Space / hold Hyper
 - Momentary layer switches on the remaining inner/outer thumbs
 
 ## Layers
 
 | Layer | Access                  | Purpose                       |
 | ----- | ----------------------- | ----------------------------- |
-| Base  | Default                 | QWERTY                        |
+| Base  | Default                 | QWERTY + GACS homerow mods    |
 | Lower | Hold left-inner thumb   | Symbols + numbers             |
 | Raise | Hold right-outer thumb  | F-keys, media, arrow nav      |
 

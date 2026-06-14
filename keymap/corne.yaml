@@ -5,13 +5,13 @@ layout:
 layers:
   Base:
     - [↹, Q, W, E, R, T, Y, U, I, O, P, ESC]
-    - [⌃, A, S, D, F, G, H, J, K, L, ";", "'"]
+    - [⌃, {t: A, h: ⌘}, {t: S, h: ⎇}, {t: D, h: ⌃}, {t: F, h: ⇧}, {t: G, h: Hyper}, {t: H, h: Hyper}, {t: J, h: ⇧}, {t: K, h: ⌃}, {t: L, h: ⎇}, {t: ";", h: ⌘}, "'"]
     - [⇧, Z, X, C, V, B, N, M, {t: ",", s: <}, {t: ".", s: ">"}, /, ⇧]
     - [⌘, {t: Lower, type: held}, {t: ⏎, h: ⎇}, {t: ⎵, h: Hyper}, ⌫, {t: Raise, type: held}]
 
   Lower:
     - [{t: ▽, type: trans}, "!", "@", "#", $, "%", ^, "&", "*", "(", ")", \]
-    - [{t: ▽, type: trans}, "1", "2", "3", "4", "5", "-", "=", "`", "[", "]", "|"]
+    - [{t: ▽, type: trans}, "1", "2", "3", "4", "5", "-", {t: "=", h: ⇧}, {t: "`", h: ⌃}, {t: "[", h: ⎇}, {t: "]", h: ⌘}, "|"]
     - [{t: ▽, type: trans}, "6", "7", "8", "9", "0", _, +, "~", "{", "}", {t: ▽, type: trans}]
     - [{t: ▽, type: trans}, {type: held}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}, {t: ▽, type: trans}]
 
