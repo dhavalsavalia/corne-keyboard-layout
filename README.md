@@ -15,9 +15,8 @@ A ZMK port of [josean's QMK Corne layout](https://github.com/josean-dev/dev-envi
 - Robust positional hold-taps (opposite-hand only, hold-trigger-on-release) so fast typing doesn't misfire mods
 - Right-hand mods replicated on the Lower layer, so `mod+num` (e.g. aerospace `alt+1`) works while numbers are held
 - Three layers: Base, Lower (symbols + numbers), Raise (F-keys, media, arrows)
-- Left-inner thumb mod-tap: tap Enter / hold Alt
-- Right-inner thumb mod-tap: tap Space / hold Hyper
-- Momentary layer switches on the remaining inner/outer thumbs
+- Left thumbs (tap/hold): Esc/Cmd, Tab/Lower, Space/Alt
+- Right thumbs (tap/hold): Return/Hyper, Backspace, Raise (hold)
 
 ## Layers
 
@@ -30,8 +29,8 @@ A ZMK port of [josean's QMK Corne layout](https://github.com/josean-dev/dev-envi
 ### Thumb cluster
 
 ```
-Left:   Cmd      Lower(hold)    Alt/Enter
-Right:  Hyper/Space   Backspace    Raise(hold)
+Left:   Esc/Cmd     Tab/Lower      Space/Alt
+Right:  Return/Hyper   Backspace    Raise(hold)
 ```
 
 ## Build & Flash
