@@ -76,25 +76,25 @@ text.footer {
 }
 
 /* styling for combo tap, and key non-tap label text */
-text.combo, text.hold, text.shifted, text.left, text.right {
+text.combo, text.hold, text.shifted, text.left, text.right, text.tl, text.tr, text.bl, text.br {
     font-size: 11px;
 }
 
-text.hold {
+text.hold, text.bl, text.br {
     text-anchor: middle;
     dominant-baseline: auto;
 }
 
-text.shifted {
+text.shifted, text.tl, text.tr {
     text-anchor: middle;
     dominant-baseline: hanging;
 }
 
-text.left {
+text.left, text.tl, text.bl {
     text-anchor: start;
 }
 
-text.right {
+text.right, text.tr, text.br {
     text-anchor: end;
 }
 
@@ -131,9 +131,87 @@ path.combo {
     visibility: hidden;
 }
 /* End Tabler Icons Cleanup */
-</style>
+
+/* font and background color specifications */
+svg.keymap {
+  font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 12px;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* default key styling */
+rect {
+    fill: #f6f8fa;
+    stroke: #c9cccf;
+    stroke-width: 1;
+}
+
+/* color accent for combo boxes */
+rect.combo {
+    fill: #fdb2e7;
+}
+
+/* color accent for held keys */
+rect.held, rect.combo.held {
+    fill: #ee61bd;
+}
+
+/* color accent for ghost (optional) keys */
+rect.ghost, rect.combo.ghost {
+    fill: #ddd;
+}
+
+text {
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* styling for layer labels */
+text.label {
+    font-weight: bold;
+    font-size: 16px;
+    text-anchor: start;
+    stroke: white;
+    fill: #ee61bd;
+    stroke-width: 2;
+    paint-order: stroke;
+}
+
+/* styling for combo tap, and key hold/shifted label text */
+text.combo, text.hold, text.shifted {
+    font-size: 11px;
+}
+
+text.hold {
+    text-anchor: middle;
+    dominant-baseline: auto;
+    fill: #ee61bd;
+}
+
+text.shifted {
+    text-anchor: middle;
+    dominant-baseline: hanging;
+    opacity: 0.7;
+}
+
+/* styling for hold/shifted label text in combo box */
+text.combo.hold, text.combo.shifted {
+    font-size: 8px;
+}
+
+/* styling for combo dendrons */
+path {
+    stroke-width: 1;
+    stroke: gray;
+    fill: none;
+}
+path.combo {
+  stroke-dasharray: 4, 4;
+  stroke-opacity: 0.3;
+}</style>
 <g transform="translate(30, 0)" class="layer-Base">
-<text x="0" y="28" class="label" id="Base">Base:</text>
+<text x="0" y="28" class="label" id="Base">Base</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 49)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -324,7 +402,7 @@ path.combo {
 </g>
 </g>
 <g transform="translate(30, 331)" class="layer-Lower">
-<text x="0" y="28" class="label" id="Lower">Lower:</text>
+<text x="0" y="28" class="label" id="Lower">Lower</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -500,7 +578,7 @@ path.combo {
 </g>
 </g>
 <g transform="translate(30, 661)" class="layer-Raise">
-<text x="0" y="28" class="label" id="Raise">Raise:</text>
+<text x="0" y="28" class="label" id="Raise">Raise</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 49)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -564,11 +642,11 @@ path.combo {
 </g>
 <g transform="translate(196, 84)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:volume-minus" xlink:href="#mdi:volume-minus" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-minus"/>
+<use href="#mdi:volume-minus" xlink:href="#mdi:volume-minus" x="-8" y="-8" height="16" width="16.0" class="key tap glyph mdi:volume-minus"/>
 </g>
 <g transform="translate(252, 91)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:volume-plus" xlink:href="#mdi:volume-plus" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:volume-plus"/>
+<use href="#mdi:volume-plus" xlink:href="#mdi:volume-plus" x="-8" y="-8" height="16" width="16.0" class="key tap glyph mdi:volume-plus"/>
 </g>
 <g transform="translate(308, 98)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
