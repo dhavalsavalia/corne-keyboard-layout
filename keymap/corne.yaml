@@ -7,7 +7,7 @@ layers:
     - [↹, Q, W, E, R, T, Y, U, I, O, P, ESC]
     - [⌃, {t: A, h: ⌘}, {t: S, h: ⎇}, {t: D, h: ⌃}, {t: F, h: ⇧}, {t: G, h: Hyper}, {t: H, h: Hyper}, {t: J, h: ⇧}, {t: K, h: ⌃}, {t: L, h: ⎇}, {t: ";", h: ⌘}, "'"]
     - [⇧, Z, X, C, V, B, N, M, {t: ",", s: <}, {t: ".", s: ">"}, /, ⇧]
-    - [{t: ⎋, h: ⌘}, {t: ↹, h: Lower, type: held}, {t: ⎵, h: ⎇}, {t: ⏎, h: Hyper}, ⌫, {t: Raise, type: held}]
+    - [{t: ⎋, h: ⌘}, {t: ⎵, h: Lower, type: held}, {t: ↹, h: ⎇}, {t: ⏎, h: Hyper}, ⌫, {t: Raise, type: held}]
 
   Lower:
     - [{t: ▽, type: trans}, "!", "@", "#", $, "%", ^, "&", "*", "(", ")", \]
