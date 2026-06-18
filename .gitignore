@@ -19,3 +19,17 @@ CLAUDE.md
 
 # ZMK build artifacts (if building in-tree)
 build/
+*.dts.pre
+*.hex
+*.bin
+*.elf
+zephyr.dts
+.config
+
+# West workspace (local builds)
+/.west/
+/zmk/
+/zephyr/
+/modules/
+/zmk-helpers/
+/nice-view-gem/

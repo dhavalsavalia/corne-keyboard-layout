@@ -41,6 +41,12 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     hold-trigger-on-release;
 )
 
+// Tap = !, Shift+tap = $
+ZMK_BEHAVIOR(excl_dllr, mod_morph,
+    bindings = <&kp EXCL>, <&kp DLLR>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -48,9 +54,9 @@ ZMK_BEHAVIOR(hmr, hold_tap,
         base_layer {
             display-name = "Base";
             bindings = <
-   &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I      &kp O    &kp P     &kp ESC
+   &kp GRAVE  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I      &kp O    &kp P     &kp ESC
    &kp LCTRL  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &hml HYPER G      &hmr HYPER H  &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
-   &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+   &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &excl_dllr
                      &mt LGUI ESC  &lt LOWER SPACE  &mt LALT TAB      &mt HYPER RET  &kp BSPC  &mo RAISE
             >;
         };
